@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch name
-        id: branch_name
         run: |
           echo ::set-env name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
 
-          echo "$SOURCE_BRANCH"
+          echo ${{ env.GITHUB_SHA_SHORT }}
           echo $SOURCE_BRANCH
